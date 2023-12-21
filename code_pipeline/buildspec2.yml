@@ -1,0 +1,7 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Building Lambda functions...
+      - aws lambda update-function-code --function-name 'index-photos-LF1' --region 'us-east-1' --zip-file fileb://lambda_function.zip

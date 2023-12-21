@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing shared dependencies...
+      - pip install -r requirements.txt -t .
+  pre_build:
+    commands:
+      - echo Pre-build steps...
+  build:
+    commands:
+      - echo Building Lambda functions...
+      - zip -r lambda_function.zip .
+artifacts:
+  files:
+    - lambda_function.zip
+    - buildspec2.yml
